@@ -18,7 +18,7 @@ a {
   justify-content: center;
   text-decoration: none;
   padding: 10px;
-  font-weight: bold;
+  font-weight: bo;
 }
 img {
   height: 120px;
@@ -30,29 +30,24 @@ img {
   margin-left: 40px;
   padding: 10px;
 }
-/* table, */
 tr,
 th,
 td {
   border: 2px solid;
   border-collapse: collapse;
   border-radius: 5px;
-  /* width: 12%; */
 }
 th {
   border: 2px solid rgb(28, 185, 28);
 }
 table {
   border: 2px solid;
-  /* border-collapse: collapse; */
   border-radius: 10px;
 }
 #table {
   width: 80%;
-  /* display: flex;
-  justify-content: center; */
+
   margin: auto;
-  /* height: 200px; */
   margin-bottom: 30px;
 }
 table {
@@ -94,7 +89,6 @@ tr {
   font-weight: bold;
   font-size: 1.2em;
   bottom: 0;
-  /* left: 50%; */
   background-color: lightgreen;
   width: 100%;
   padding-left: 0;
@@ -111,7 +105,6 @@ tr {
   margin: auto;
   background-color: lightgreen;
   border-radius: 6px;
-  /* border-color: coral; */
 }
 #buttons {
   margin: auto;
