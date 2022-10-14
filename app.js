@@ -119,7 +119,7 @@ const changeHead = () => {
   head.innerText = "Changed Header ";
   head.style.color = "coral";
 };
-changeHead();
+// changeHead();
 
 // 35) Write a function to add an extra row to the table
 let table = document.querySelector("table");
@@ -202,18 +202,110 @@ document.querySelector("#myBtn22").onclick = function () {
 //         EXTRA EXERCISES
 
 //41) Add an eventListener to show an alert when the cursor hovers a link, displaying its href property
+//TODO---1
 
 let alertLink = document.querySelectorAll("a");
 
-// function() {
-//     for(l)
-// }
+function alert() {
+  for (let i = 0; i < alertLink.length; i++) {
+    alertLink[i].addEventListener("onmouseover", function () {
+      // let a=alertLink[i]
+      alert("louis");
+    });
+  }
+}
+alert();
+//TODO end
 //         42) Create a button that will hide every image on the page when clicked
+let img = document.querySelectorAll("img");
+document.querySelector("#hideImg").onclick = function () {
+  for (let i = 0; i < img.length; i++) {
+    img[i].style.display = "none";
+  }
+};
+document.querySelector("#displayImg").onclick = function () {
+  for (let i = 0; i < img.length; i++) {
+    img[i].style.display = "block";
+  }
+};
 //         43) Create a button that will hide or show the table on the page when clicked
-//         44) Write a function for calculating the sum of every number inside all the table cells (if their content is numeric)
-//         45) Delete the last letter from the heading each time the user clicks on it
-//         46) Change the background color of a <td> if the user clicks on it
-//         47) Add a delete button at the bottom of the table, when clicked it should delete a random <td>
-//         48) Add automatically a pink border to a cell when the mouse hovers it
-//         49) Write a function to create a table with 4 rows and 3 columns programmatically and add it to the bottom of the page
-//         50) Write a function to remove the last table from the page
+//TODO  ------2
+// let tableContent = document.querySelector("#table");
+// let hideDisplayTable = document.querySelector("#hideDisplayTable");
+
+// hideDisplayTable.onclick = function () {
+//   tableContent.style.display = "none";
+// };
+//44) Write a function for calculating the sum of every number inside all the table cells (if their content is numeric)
+
+//TODO -----3
+function sum() {
+  let sum = 0;
+  for (let i = 0; i < tdElems.length; i++) {
+    if (typeof (Number(tdElems[i].innerText) === "number")) {
+      sum += tdElems[i];
+    }
+  }
+  return sum;
+}
+console.log(sum());
+console.log(Number(tdElems[0].innerText) == "number");
+//45) Delete the last letter from the heading each time the user clicks on it
+// let h1Content = document.querySelector("h1");
+// // let arrOfH1Content=[]
+// // h1Content.innerText;
+// console.log(h1Content.innerText);
+
+// document.querySelector("h1").onclick = function () {
+//   for (let i = 0; h1Content.length; i++) {
+//     h1Content.innerText;
+//     // h1Content.slice(h1Content.length);
+//     h1Content.substr(0, h1Content.length - 1);
+//   }
+// };
+
+//46) Change the background color of a <td> if the user clicks on it
+function backgroundColor(e) {
+  e.currentTarget.style.backgroundColor = "lightgreen";
+  console.log(e.currentTarget);
+}
+
+for (let i = 0; i < tdElems.length; i++) {
+  tdElems[i].addEventListener("click", backgroundColor);
+}
+
+// 47) Add a delete button at the bottom of the table, when clicked it should delete a random <td>
+let deleteTd = document.querySelector("#deleteTd");
+deleteTd.addEventListener("click", function deleteCell() {
+  tdElems[Math.floor(Math.random() * tdElems.length)].style.display = "none";
+});
+
+//  48) Add automatically a pink border to a cell when the mouse hovers it
+function pinkBorder(e) {
+  e.currentTarget.style.borderColor = "pink";
+  console.log(e.currentTarget);
+}
+function greenBorder(e) {
+  e.currentTarget.style.borderColor = "green";
+  console.log(e.currentTarget);
+}
+
+for (let i = 0; i < tdElems.length; i++) {
+  tdElems[i].addEventListener("mouseover", pinkBorder);
+  tdElems[i].addEventListener("mouseout", greenBorder);
+}
+
+// 49) Write a function to create a table with 4 rows and 3 columns programmatically and add it to the bottom of the page
+function createTable(rowNum, colNum) {
+  //for (let i = 1; i <= rowNum; i++) {
+  for (let j = 1; i <= colNum; j++) {
+    let row = document.createElement("tr");
+    let col = document.createElement("td");
+    col.textContent = "something new";
+    row.appendChild(col);
+  }
+  //}
+}
+createTable(4, 3);
+
+// 50) Write a function to remove the last table from the page
