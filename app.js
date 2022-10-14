@@ -125,7 +125,7 @@ const changeHead = () => {
 let table = document.querySelector("table");
 let tr = document.createElement("tr");
 function addTableRow() {
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     let td = document.createElement("td");
     td.innerText = "added something";
     tr.appendChild(td);

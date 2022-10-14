@@ -74,6 +74,7 @@ p {
 td {
   border: 2px solid rgb(28, 185, 28);
   width: 50px;
+  height: 60px;
 }
 tr {
   border: 2px dotted red;
