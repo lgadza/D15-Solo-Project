@@ -4,6 +4,7 @@ body {
   border: 1px solid;
   margin-top: 5vh;
   margin-bottom: 5vh;
+  padding: 15px;
 }
 h1 {
   display: flex;

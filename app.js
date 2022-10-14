@@ -94,3 +94,126 @@ function higherSum(arr1, arr2) {
   }
 }
 console.log(higherSum(arr1, arr2));
+
+// DOM EXERCISES
+
+// 31) Get the element with an id of "container" from the page
+
+const elem = document.querySelector("#container");
+
+// 32) Get every <td> element from the page
+
+let tdElems = document.querySelectorAll("td");
+console.log(tdElems);
+
+//33) Use a loop for printing the text inside of every <td> element in the page
+
+for (let i = 0; i < tdElems.length; i++) {
+  const tdElemContent = tdElems[i].innerText;
+  console.log(tdElemContent);
+}
+//34) Write a function to change the heading of the page
+
+let head = document.querySelector("h1");
+const changeHead = () => {
+  head.innerText = "Changed Header ";
+  head.style.color = "coral";
+};
+changeHead();
+
+// 35) Write a function to add an extra row to the table
+let table = document.querySelector("table");
+let tr = document.createElement("tr");
+function addTableRow() {
+  for (let i = 0; i < 4; i++) {
+    let td = document.createElement("td");
+    td.innerText = "added something";
+    tr.appendChild(td);
+  }
+}
+table.appendChild(tr);
+addTableRow();
+
+//36) Write a function to add a class of "test" to each row in the table
+let rowArr = document.querySelectorAll("tr");
+function addClass() {
+  for (let i = 0; i < rowArr.length; i++) {
+    rowArr[i].className = "test";
+  }
+}
+addClass();
+// 37) Write a function to add a red background to every link in the page
+let links = document.querySelectorAll("a");
+function addRedBackground() {
+  for (let i = 0; i < links.length; i++) {
+    links[i].style.backgroundColor = "lightgreen";
+  }
+}
+addRedBackground();
+
+//38) Console log "Page loaded" when the page is correctly loaded
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Page loaded");
+});
+
+// 39) Write a function to add new items to a unordered list
+document.querySelector("#myBtn1").onclick = function () {
+  let ul = document.querySelector("#ul1");
+  let newGame = document.createElement("li");
+  newGame.className = "games";
+  newGame.innerText = "Need For Speed";
+  newGame.style.color = "green";
+
+  ul.appendChild(newGame);
+};
+
+document.querySelector("#myBtn2").onclick = function () {
+  let ul = document.querySelector("#ul2");
+  let newGame = document.createElement("li");
+  newGame.innerText = "Ooops no other options";
+  newGame.style.backgroundColor = "red";
+  newGame.style.color = "white";
+  newGame.style.display = "inline";
+  newGame.style.padding = "3px";
+  ul.appendChild(newGame);
+};
+
+// 40) Write a function to empty a list
+let gameList = document.querySelectorAll(".games");
+
+document.querySelector("#myBtn11").onclick = function () {
+  for (let i = 0; i < gameList.length; i++) {
+    // gameList[i].innerText = "";
+    gameList[i].style.display = "none";
+  }
+};
+
+let optionsList = document.querySelectorAll(".options");
+
+document.querySelector("#myBtn22").onclick = function () {
+  for (let i = 0; i < optionsList.length; i++) {
+    optionsList[i].remove();
+    // optionsList[i].innerText = "";
+    // gameList[i].style.display = "none";
+  }
+};
+
+//         EXTRA EXERCISES
+
+//41) Add an eventListener to show an alert when the cursor hovers a link, displaying its href property
+
+let alertLink = document.querySelectorAll("a");
+
+// function() {
+//     for(l)
+// }
+//         42) Create a button that will hide every image on the page when clicked
+//         43) Create a button that will hide or show the table on the page when clicked
+//         44) Write a function for calculating the sum of every number inside all the table cells (if their content is numeric)
+//         45) Delete the last letter from the heading each time the user clicks on it
+//         46) Change the background color of a <td> if the user clicks on it
+//         47) Add a delete button at the bottom of the table, when clicked it should delete a random <td>
+//         48) Add automatically a pink border to a cell when the mouse hovers it
+//         49) Write a function to create a table with 4 rows and 3 columns programmatically and add it to the bottom of the page
+//         50) Write a function to remove the last table from the page
