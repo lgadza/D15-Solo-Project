@@ -250,8 +250,11 @@ for (let i = 0; i < img.length; i++) {
 let tableContent = document.querySelector("#table");
 let hideDisplayTable = document.querySelector("#hideDisplayTable");
 
-hideDisplayTable.onclick = function () {
+hideDisplayTable.onmousedown = function () {
   tableContent.style.display = "none";
+};
+hideDisplayTable.onmouseup = function () {
+  tableContent.style.display = "block";
 };
 // 44) Write a function for calculating the sum of every number inside all the table cells (if their content is numeric)
 
