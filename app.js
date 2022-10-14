@@ -203,18 +203,25 @@ document.querySelector("#myBtn22").onclick = function () {
 
 //41) Add an eventListener to show an alert when the cursor hovers a link, displaying its href property
 //TODO---1
-
 let alertLink = document.querySelectorAll("a");
-
-function alert() {
-  for (let i = 0; i < alertLink.length; i++) {
-    alertLink[i].addEventListener("onmouseover", function () {
-      // let a=alertLink[i]
-      alert("louis");
-    });
-  }
+function alert(e) {
+  e.currentTarget.alert = "https://erli.pl/produkt/";
+  console.log(e.currentTarget);
 }
-alert();
+
+for (let i = 0; i < alertLink.length; i++) {
+  alertLink[i].addEventListener("mouseover", alert);
+}
+
+// function alert() {
+//   for (let i = 0; i < alertLink.length; i++) {
+//     alertLink[i].addEventListener("onmouseover", function () {
+//       // let a=alertLink[i]
+//       alert("louis");
+//     });
+//   }
+// }
+// alert();
 //TODO end
 //         42) Create a button that will hide every image on the page when clicked
 let img = document.querySelectorAll("img");
@@ -228,15 +235,25 @@ document.querySelector("#displayImg").onclick = function () {
     img[i].style.display = "block";
   }
 };
+
+// let img = document.querySelectorAll("img");
+function hideImg(e) {
+  e.currentTarget.style.display = "none";
+  console.log(e.currentTarget);
+}
+
+for (let i = 0; i < img.length; i++) {
+  img[i].addEventListener("click", hideImg);
+}
 //         43) Create a button that will hide or show the table on the page when clicked
 //TODO  ------2
-// let tableContent = document.querySelector("#table");
-// let hideDisplayTable = document.querySelector("#hideDisplayTable");
+let tableContent = document.querySelector("#table");
+let hideDisplayTable = document.querySelector("#hideDisplayTable");
 
-// hideDisplayTable.onclick = function () {
-//   tableContent.style.display = "none";
-// };
-//44) Write a function for calculating the sum of every number inside all the table cells (if their content is numeric)
+hideDisplayTable.onclick = function () {
+  tableContent.style.display = "none";
+};
+// 44) Write a function for calculating the sum of every number inside all the table cells (if their content is numeric)
 
 //TODO -----3
 function sum() {
@@ -296,16 +313,16 @@ for (let i = 0; i < tdElems.length; i++) {
 }
 
 // 49) Write a function to create a table with 4 rows and 3 columns programmatically and add it to the bottom of the page
-function createTable(rowNum, colNum) {
-  //for (let i = 1; i <= rowNum; i++) {
-  for (let j = 1; i <= colNum; j++) {
-    let row = document.createElement("tr");
-    let col = document.createElement("td");
-    col.textContent = "something new";
-    row.appendChild(col);
-  }
-  //}
-}
-createTable(4, 3);
+// function createTable(rowNum, colNum) {
+//   //for (let i = 1; i <= rowNum; i++) {
+//   for (let j = 1; i <= colNum; j++) {
+//     let row = document.createElement("tr");
+//     let col = document.createElement("td");
+//     col.textContent = "something new";
+//     row.appendChild(col);
+//   }
+//   //}
+// }
+// createTable(4, 3);
 
 // 50) Write a function to remove the last table from the page
