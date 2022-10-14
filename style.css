@@ -83,19 +83,24 @@ tr {
   margin-bottom: 40px;
 }
 #copyright {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
+  font-weight: bold;
+  font-size: 1.2em;
   bottom: 0;
   /* left: 50%; */
-  background-color: coral;
+  background-color: lightgreen;
   width: 100%;
   padding-left: 0;
   text-align: center;
-  height: 30px;
+  height: 40px;
 }
 #social-media {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-top: 10px;
 }
 #deleteTd {
   display: block;
@@ -103,4 +108,39 @@ tr {
   background-color: lightgreen;
   border-radius: 6px;
   /* border-color: coral; */
+}
+#buttons {
+  margin: auto;
+  margin-left: 35%;
+  margin-bottom: 10px;
+}
+#orderedList {
+  display: block;
+  margin-left: 45%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#nestedPar {
+  margin-left: 45%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#nestedList {
+  margin-left: 45%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#myBtn1 {
+  margin-left: -15px;
+}
+#myBtn2 {
+  margin-left: -40px;
+}
+button {
+  background-color: lightgreen;
+  border-radius: 6px;
+}
+button:hover {
+  background-color: rgb(12, 37, 12);
+  color: white;
 }
